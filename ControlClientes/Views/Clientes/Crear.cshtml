@@ -1,17 +1,33 @@
 ﻿@model Cliente
 
-<h2>Agregar Cliente</h2>
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center text-primary">➕ Agregar Cliente</h2>
 
-<form method="post">
-    <label>Nombre:</label>
-    <input type="text" name="Nombre" required />
+        <form asp-action="Crear" method="post">
+            <div class="mb-3">
+                <label class="form-label fw-bold">Nombre:</label>
+                <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre" required />
+            </div>
 
-    <label>Correo:</label>
-    <input type="email" name="Correo" required />
+            <div class="mb-3">
+                <label class="form-label fw-bold">Correo:</label>
+                <input asp-for="Correo" type="correo" class="form-control" placeholder="Ingrese el email" required />
+            </div>
 
-    <label>Teléfono:</label>
-    <input type="text" name="Telefono" required />
+            <div class="mb-3">
+                <label class="form-label fw-bold">Teléfono:</label>
+                <input asp-for="Telefono" name="Telefono" required />
+            </div>
 
-    <button type="submit">Guardar</button>
-</form>
-<a href="/Clientes/Index">🔙 Volver</a>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">✅ Guardar Cliente</button>
+                <a href="/Clientes" class="btn btn-secondary">🔙 Volver</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+   

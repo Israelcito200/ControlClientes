@@ -1,26 +1,32 @@
 ﻿@model List<Cliente>
 
-<h2>Lista de Clientes</h2>
+<div class="container mt-4">
+    <h2 class="text-center text-primary">Lista de Clientes</h2>
 
-<a href="/Clientes/Crear">➕ Agregar Cliente</a>
+    <a href="/Clientes/Crear" class="btn btn-success mb-3">➕ Agregar Cliente</a>
 
-<table border="1">
+    <table class="table table-hover table-bordered">
+        <thead class="table-dark">
     <tr>
         <th>Nombre</th>
         <th>Correo</th>
         <th>Teléfono</th>
         <th>Acciones</th>
-    </tr>
-    @foreach (var cliente in Model)
-    {
-        <tr>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
             <td>@cliente.Nombre</td>
             <td>@cliente.Correo</td>
             <td>@cliente.Telefono</td>
             <td>
                 <a href="/Clientes/Editar/@cliente.Id">✏️ Editar</a> |
                 <a href="/Clientes/Eliminar/@cliente.Id">❌ Eliminar</a>
-            </td>
-        </tr>
-    }
-</table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
